@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Calculator{
+    public static void main(String[] args) {
+        System.out.println("~~SIMPLE CALCULATOR~~");
+        System.out.println("---------------------\n");
+
+        
+        Scanner input = new Scanner(System.in);
+        if(!input.hasNextDouble()){
+            System.out.println("Please give 2 numbers and 1 operator(+,-,*,/) \nin the next format:\n5\n2\n+");
+            return;
+        }
+        
+        double num1 = input.nextDouble();  //integer, float
+        //char operator = input.next().charAt(0);  //👉Activate this line for 5 + 2 input format
+        double num2 = input.nextDouble();
+        double result;
+
+       char operator = input.next().charAt(0);  //👉Disactivate this line for 5 + 2 input format charAt(0) returns the first character
+        switch(operator)
+        {
+            case '+':
+                result = num1 + num2;
+                break;
+
+            case '-':
+                result = num1 - num2;
+                break;
+
+            case '*':
+                result = num1 * num2;
+                break;
+
+            case '/':
+                result = num1 / num2;
+                break;
+
+            default:
+                System.out.println("Please give 2 numbers and 1 operator(+,-,*,/) \nin the next format:\n5\n2\n+");
+                return;
+        }
+
+        System.out.println(num1+" "+operator+" "+num2+" = "+result);
+    }
+}
